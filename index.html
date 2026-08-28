@@ -28,10 +28,10 @@
 <body>
 	<aside>
 		<div class="square-container" aria-hidden="true">
-			<div class="square1"></div>
-			<div class="square2"></div>
-			<div class="square3"></div>
-			<div class="square4"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
 		</div>
 		<h2>Dashboard</h2>
 
@@ -54,12 +54,12 @@
 	</aside>
 
 	<header>
-		<search>
+		<search class="search-wrapper">
 			<form class="search-container" action="#" method="get">
 				<button type="submit">
-					<img src="assets/img/search.svg" alt="Search button">
+					<img src="assets/img/search.svg" alt="Search button" />
 				</button>
-				<input class="searchbox" type="search" inputmode="search">
+				<input class="searchbox" type="search" inputmode="search" />
 			</form>
 		</search>
 
@@ -67,55 +67,196 @@
 			class="notification"
 			src="assets/img/notification.svg"
 			alt="notification"
-		>
+		/>
 
 		<img
 			class="profile-picture"
 			src="assets/img/profile-picture.jpg"
 			alt="Profile"
-		>
+		/>
 
-		<p class="name"><a href="https://github.com/AzamAzis">Azam Azis</a></p>
+		<p class="name">
+			<a
+				href="https://github.com/AzamAzis"
+				rel="noopener noreferrer"
+				target="_blank"
+			>
+				Azam Azis
+			</a>
+		</p>
 
 		<div class="container">
-			<img src="assets/img/profile-picture.jpg" alt="Profile">
+			<img src="assets/img/profile-picture.jpg" alt="Profile" />
 
-			<div class="welcome">
-				<p class="greeting">Hi there,</p>
-				<h1 class="name">Azam Azis (@AzamAzis)</h1>
+			<div class="greeting">
+				<p class="greeting__para">Hi there,</p>
+				<h1 class="greeting__name name">Azam Azis (@AzamAzis)</h1>
 			</div>
 
-			<button type="button">New</button>
-			<button type="button">Upload</button>
-			<button type="button">Share</button>
+			<button class="btn" type="button">New</button>
+			<button class="btn" type="button">Upload</button>
+			<button class="btn" type="button">Share</button>
 		</div>
 	</header>
 
 	<main>
 		<h2 class="title">Your Projects</h2>
 		<div class="projects-container">
-			<div class="project"></div>
-			<div class="project"></div>
-			<div class="project"></div>
-			<div class="project"></div>
-			<div class="project"></div>
-			<div class="project"></div>
+			<div class="project">
+				<h3 class="project__title">Admin Dashboard</h3>
+				<p class="project__introduction">
+					Responsive, feature-rich control panel built as part of The Odin Project
+					curriculum! This project showcases advanced layout techniques to design a
+					complex.
+				</p>
+
+				<div class="icons">
+					<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
+					<img class="icon" src="assets/img/eye-plus-outline.svg" alt="Watch list." />
+					<img class="icon" src="assets/img/git-branch.svg" alt="Git branch." />
+				</div>
+			</div>
+
+			<div class="project">
+				<h3 class="project__title">Sign-up Form</h3>
+				<p class="project__introduction">
+					Responsive user registration interface built as part of The Odin Project
+					curriculum! This project showcases advanced form styling, custom input
+					validation, and creative layout positioning.
+				</p>
+
+				<div class="icons">
+					<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
+					<img class="icon" src="assets/img/eye-plus-outline.svg" alt="Watch list." />
+					<img class="icon" src="assets/img/git-branch.svg" alt="Git branch." />
+				</div>
+			</div>
+
+			<div class="project">
+				<h3 class="project__title">Calculator</h3>
+				<p class="project__introduction">
+					A fully functional, interactive web calculator built as part of The Odin Project
+					curriculum! This project showcases dynamic state management, event handling,
+					and real-time DOM updates
+				</p>
+
+				<div class="icons">
+					<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
+					<img class="icon" src="assets/img/eye-plus-outline.svg" alt="Watch list." />
+					<img class="icon" src="assets/img/git-branch.svg" alt="Git branch." />
+				</div>
+			</div>
+
+			<div class="project">
+				<h3 class="project__title">Rock Paper Scissors</h3>
+				<p class="project__introduction">
+					a classic hand game brought to life with interactive JavaScript! This project
+					is a beginner-friendly web application designed to demonstrate fundamental
+					programming concepts through a fun, nostalgic game.
+				</p>
+
+				<div class="icons">
+					<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
+					<img class="icon" src="assets/img/eye-plus-outline.svg" alt="Watch list." />
+					<img class="icon" src="assets/img/git-branch.svg" alt="Git branch." />
+				</div>
+			</div>
+
+			<div class="project">
+				<h3 class="project__title">Recipes</h3>
+				<p class="project__introduction">
+					This project showcases foundational HTML and CSS skills by creating a clean,
+					multi-page recipe website.
+				</p>
+
+				<div class="icons">
+					<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
+					<img class="icon" src="assets/img/eye-plus-outline.svg" alt="Watch list." />
+					<img class="icon" src="assets/img/git-branch.svg" alt="Git branch." />
+				</div>
+			</div>
+
+			<div class="project">
+				<h3 class="project__title">Landing Page</h3>
+				<p class="project__introduction">
+					This project showcases foundational HTML and CSS skills by creating a clean
+					landing page.
+				</p>
+
+				<div class="icons">
+					<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
+					<img class="icon" src="assets/img/eye-plus-outline.svg" alt="Watch list." />
+					<img class="icon" src="assets/img/git-branch.svg" alt="Git branch." />
+				</div>
+			</div>
 		</div>
 
 		<h2 class="title">Announcement</h2>
-		<div class="announcements-container">
-			<div class="announcement"></div>
-			<div class="announcement"></div>
-			<div class="announcement"></div>
-		</div>
+		<ul class="announcements-container">
+			<li class="announcement">
+				<h3 class="announcement__title">Site Maintenance</h3>
+				<p class="announcement__detail">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem corporis totam
+					at, dolore reprehenderit dolorem!
+				</p>
+			</li>
+
+			<li class="announcement">
+				<h3 class="announcement__title">Community Share Day</h3>
+				<p class="announcement__detail">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quae.
+				</p>
+			</li>
+
+			<li class="announcement">
+				<h3 class="announcement__title">Update Privacy Policy</h3>
+				<p class="announcement__detail">
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quaerat,
+					perspiciatis illum sint fugit consequatur ab temporibus quis suscipit quod.
+				</p>
+			</li>
+		</ul>
 
 		<h2 class="title">Trending</h2>
-		<div class="trends-container">
-			<div class="trend"></div>
-			<div class="trend"></div>
-			<div class="trend"></div>
-			<div class="trend"></div>
-		</div>
+		<ul class="trends-container">
+			<li class="trend">
+				<h3 class="username">
+					<a
+						href="https://github.com/AzamAzis"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						@AzamAzis
+					</a>
+				</h3>
+				<p class="status">Learn to code</p>
+			</li>
+
+			<li class="trend">
+				<h3 class="username"><a href="/">@AzisAzis</a></h3>
+				<p class="status">Creating my own sunshine on a cloudy day.</p>
+			</li>
+
+			<li class="trend">
+				<h3 class="username">
+					<a
+						href="https://x.com/AzamAzis01"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						@AzamAzis01
+					</a>
+				</h3>
+				<p class="status">
+					I was going to take over the world today, but I overslept. Let's reschedule.
+				</p>
+			</li>
+
+			<li class="trend">
+				<h3 class="username"><a href="/">@AzamAzam</a></h3>
+				<p class="status">Energy is contagious—choose what you absorb wisely.</p>
+			</li>
+		</ul>
 	</main>
 </body>
 </html>
