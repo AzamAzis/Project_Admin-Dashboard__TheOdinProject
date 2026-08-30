@@ -1,7 +1,55 @@
-*,
-::before,
-::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+@import "reset.css";
+
+body {
+	background-color: var(--clr-background);
+	min-height: 100dvh;
+	padding: 1.5rem;
+	font-family: "Roboto", sans-serif;
+	color: var(--clr-text-main);
+}
+
+.square-container {
+	position: relative;
+	display: grid;
+	gap: 0.25rem;
+	grid-template-areas:
+		"square_1 square_2"
+		"square_1 square_2"
+		"square_1 square_3"
+		"square_4 square_3"
+		"square_4 square_3"
+	;
+	height: 1.75rem;
+	width: 1.75rem;
+}
+
+.square {
+	background-color: var(--clr-surface);
+}
+
+.square:nth-child(1) {
+	grid-area: square_1;
+}
+
+.square:nth-child(2) {
+	grid-area: square_2;
+}
+
+.square:nth-child(3) {
+	grid-area: square_3;
+}
+
+.square:nth-child(4) {
+	grid-area: square_4;
+}
+
+.dashboard__title,
+.nav-container {
+	/* display: none; */
+	transition: all 0.3s ease-in;
+}
+
+/* ||DASHBOARD SWITCH */
+.active {
+	display: block;
 }

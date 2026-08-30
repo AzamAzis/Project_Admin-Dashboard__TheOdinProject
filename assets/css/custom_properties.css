@@ -1,0 +1,47 @@
+:root {
+	/* --- Colors --- */
+	/* Main Theme Colors */
+	--clr-primary: #1992d4;      /* Sidebar and button blue */
+	--clr-background: #e2e8f0;   /* Main content area light gray/blue background */
+	--clr-surface: #ffffff;      /* Header and card white background */
+	--clr-accent: #f0b429;       /* Yellow/Orange border on project cards */
+
+	/* Text Colors */
+	--clr-text-main: #000000;    /* Dark text for headings and names */
+	--clr-text-muted: #4b5563;   /* Gray text for paragraphs and handles */
+	--clr-text-light: #ffffff;   /* White text for sidebar and buttons */
+
+	/* UI Elements */
+	--clr-search-bg: #e2e8f0;    /* Gray background for the search bar */
+	--clr-icon: #000000;         /* Default color for header and card icons */
+	--clr-icon-sidebar: #ffffff; /* White icons in sidebar */
+
+	/* Font Sizes */
+	--fs-sm: 0.875rem;           /* Handles (@morgan), dates, small text */
+	--fs-base: 1rem;             /* Standard paragraph text */
+	--fs-md: 1.125rem;           /* Card titles, Sidebar links */
+	--fs-lg: 1.5rem;             /* Section headings (Your Projects) */
+	--fs-xl: 1.75rem;            /* Main Dashboard title */
+
+	/* Font Weights */
+	--fw-regular: 400;
+	--fw-bold: 700;
+
+	/* --- Spacing --- */
+	--space-xs: 0.25rem;
+	--space-sm: 0.5rem;
+	--space-md: 1rem;
+	--space-lg: 1.5rem;
+	--space-xl: 2rem;
+
+	/* --- Borders & Radii --- */
+	--radius-sm: 8px;            /* Project and announcement cards */
+	--radius-pill: 50px;         /* Search bar and top right buttons */
+	--radius-circle: 50%;        /* Profile avatars */
+
+	--border-card-accent: 8px solid var(--clr-accent); /* Left border on project cards */
+
+	/* --- Shadows --- */
+	--shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	--shadow-sidebar: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
