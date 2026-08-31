@@ -24,41 +24,42 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png" />
 	<link rel="manifest" href="/site.webmanifest?v=1" />
 	<link rel="stylesheet" href="assets/css/styles.css">
+	<script src="assets/js/script.js" defer></script>
 </head>
 <body>
-	<aside class="dashboard">
+	<div class="sidebar-opener">
 		<button
-			class="btn square-container"
+			class="btn dashboard"
 			type="button"
 			aria-label="dashboard switch"
 			aria-description="Click this button to open the dashboard menu."
 		>
+		<div class="btn square-container" type="button">
 			<div class="square" aria-hidden="true"></div>
 			<div class="square" aria-hidden="true"></div>
 			<div class="square" aria-hidden="true"></div>
 			<div class="square" aria-hidden="true"></div>
+		</div>
+			<h2 class="dashboard__title">Dashboard</h2>
 		</button>
-
-		<h2 class="dashboard__title">Dashboard</h2>
-
+	</div>
+	<aside class="sidebar" hidden>
 		<nav class="nav-container">
 			<ul class="navigation">
-				<li><a href="/">Home</a></li>
-				<li><a href="/">Profile</a></li>
-				<li><a href="/">Messages</a></li>
-				<li><a href="/">History</a></li>
-				<li><a href="/">Tasks</a></li>
-				<li><a href="/">Communities</a></li>
+				<li class="menu"><a class="menu__link" href="/">Home</a></li>
+				<li class="menu"><a class="menu__link" href="/">Profile</a></li>
+				<li class="menu"><a class="menu__link" href="/">Messages</a></li>
+				<li class="menu"><a class="menu__link" href="/">History</a></li>
+				<li class="menu"><a class="menu__link" href="/">Tasks</a></li>
+				<li class="menu"><a class="menu__link" href="/">Communities</a></li>
 			</ul>
-
 			<ul class="permission">
-				<li><a href="/">Settings</a></li>
-				<li><a href="/">Support</a></li>
-				<li><a href="/">Privacy</a></li>
+				<li class="menu"><a class="menu__link" href="/">Settings</a></li>
+				<li class="menu"><a class="menu__link" href="/">Support</a></li>
+				<li class="menu"><a class="menu__link" href="/">Privacy</a></li>
 			</ul>
 		</nav>
 	</aside>
-
 	<header>
 		<search class="search-wrapper">
 			<form class="search-container" action="#" method="get">
@@ -68,19 +69,16 @@
 				<input class="searchbox" type="search" inputmode="search" />
 			</form>
 		</search>
-
 		<img
 			class="notification"
 			src="assets/img/notification.svg"
 			alt="notification"
 		/>
-
 		<img
 			class="profile-picture"
 			src="assets/img/profile-picture.jpg"
 			alt="Profile"
 		/>
-
 		<p class="name">
 			<a
 				href="https://github.com/AzamAzis"
@@ -90,21 +88,17 @@
 				Azam Azis
 			</a>
 		</p>
-
 		<div class="container">
 			<img src="assets/img/profile-picture.jpg" alt="Profile" />
-
 			<div class="greeting">
 				<p class="greeting__para">Hi there,</p>
 				<h1 class="greeting__name name">Azam Azis (@AzamAzis)</h1>
 			</div>
-
 			<button class="btn" type="button">New</button>
 			<button class="btn" type="button">Upload</button>
 			<button class="btn" type="button">Share</button>
 		</div>
 	</header>
-
 	<main>
 		<h2 class="title">Your Projects</h2>
 		<div class="projects-container">
@@ -115,7 +109,6 @@
 					curriculum! This project showcases advanced layout techniques to design a
 					complex.
 				</p>
-
 				<div class="icons">
 					<button class="btn" type="button">
 						<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
@@ -128,7 +121,6 @@
 					</button>
 				</div>
 			</div>
-
 			<div class="project">
 				<h3 class="project__title">Sign-up Form</h3>
 				<p class="project__introduction">
@@ -136,7 +128,6 @@
 					curriculum! This project showcases advanced form styling, custom input
 					validation, and creative layout positioning.
 				</p>
-
 				<div class="icons">
 					<button class="btn" type="button">
 						<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
@@ -149,7 +140,6 @@
 					</button>
 				</div>
 			</div>
-
 			<div class="project">
 				<h3 class="project__title">Calculator</h3>
 				<p class="project__introduction">
@@ -157,7 +147,6 @@
 					curriculum! This project showcases dynamic state management, event handling,
 					and real-time DOM updates
 				</p>
-
 				<div class="icons">
 					<button class="btn" type="button">
 						<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
@@ -170,7 +159,6 @@
 					</button>
 				</div>
 			</div>
-
 			<div class="project">
 				<h3 class="project__title">Rock Paper Scissors</h3>
 				<p class="project__introduction">
@@ -178,7 +166,6 @@
 					is a beginner-friendly web application designed to demonstrate fundamental
 					programming concepts through a fun, nostalgic game.
 				</p>
-
 				<div class="icons">
 					<button class="btn" type="button">
 						<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
@@ -191,14 +178,12 @@
 					</button>
 				</div>
 			</div>
-
 			<div class="project">
 				<h3 class="project__title">Recipes</h3>
 				<p class="project__introduction">
 					This project showcases foundational HTML and CSS skills by creating a clean,
 					multi-page recipe website.
 				</p>
-
 				<div class="icons">
 					<button class="btn" type="button">
 						<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
@@ -211,14 +196,12 @@
 					</button>
 				</div>
 			</div>
-
 			<div class="project">
 				<h3 class="project__title">Landing Page</h3>
 				<p class="project__introduction">
 					This project showcases foundational HTML and CSS skills by creating a clean
 					landing page.
 				</p>
-
 				<div class="icons">
 					<button class="btn" type="button">
 						<img class="icon" src="assets/img/star-plus.svg" alt="Add to favorites" />
@@ -232,7 +215,6 @@
 				</div>
 			</div>
 		</div>
-
 		<h2 class="title">Announcement</h2>
 		<ul class="announcements-container">
 			<li class="announcement">
@@ -242,14 +224,12 @@
 					at, dolore reprehenderit dolorem!
 				</p>
 			</li>
-
 			<li class="announcement">
 				<h3 class="announcement__title">Community Share Day</h3>
 				<p class="announcement__detail">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, quae.
 				</p>
 			</li>
-
 			<li class="announcement">
 				<h3 class="announcement__title">Update Privacy Policy</h3>
 				<p class="announcement__detail">
@@ -258,7 +238,6 @@
 				</p>
 			</li>
 		</ul>
-
 		<h2 class="title">Trending</h2>
 		<ul class="trends-container">
 			<li class="trend">
@@ -273,12 +252,10 @@
 				</h3>
 				<p class="status">Learn to code</p>
 			</li>
-
 			<li class="trend">
 				<h3 class="username"><a href="/">@AzisAzis</a></h3>
 				<p class="status">Creating my own sunshine on a cloudy day.</p>
 			</li>
-
 			<li class="trend">
 				<h3 class="username">
 					<a
@@ -293,7 +270,6 @@
 					I was going to take over the world today, but I overslept. Let's reschedule.
 				</p>
 			</li>
-
 			<li class="trend">
 				<h3 class="username"><a href="/">@AzamAzam</a></h3>
 				<p class="status">Energy is contagious—choose what you absorb wisely.</p>

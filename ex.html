@@ -4,8 +4,37 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<style>
+		.box {
+			background-image: linear-gradient(royalblue, blue);
+			height: 100px;
+			width: 100px;
+			transition: all 1s ease-in;
+		}
+
+		.ball {
+			background-color: black;
+			padding: 1rem;
+			width: 100px;
+		}
+
+		.ball:hover + .box {
+			width: 100px;
+		}
+
+		p {
+			visibility: hidden;
+			transition: all 3s ease-in;
+		}
+
+		.box:hover + p {
+			visibility: visible;
+		}
+	</style>
 </head>
 <body>
-	<p style="max-width: 80ch;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae iste amet voluptas. Temporibus optio similique amet veritatis iusto. Repudiandae non rerum nostrum eos qui iusto dolore laborum alias mollitia architecto delectus asperiores quam voluptatum, dolorum soluta quis, at tempora praesentium perferendis nesciunt ipsam. Ullam voluptate aspernatur quis eveniet nulla amet voluptates dolore accusantium omnis! Explicabo odio fugit iusto, inventore dolorum exercitationem corrupti recusandae cumque aperiam consectetur ex molestias sint dolor hic temporibus earum consequuntur in. Excepturi velit dolores neque. Magnam, tenetur beatae earum deserunt, sint deleniti eveniet delectus reprehenderit dolor corporis porro voluptatibus ea libero quo aliquid quidem eius qui?</p>
+	<div class="ball"></div>
+	<div class="box"></div>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, officia?</p>
 </body>
 </html>
