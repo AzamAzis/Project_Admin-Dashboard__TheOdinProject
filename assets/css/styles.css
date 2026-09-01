@@ -25,22 +25,22 @@ body {
 
 .square {
 	background-color: var(--clr-surface);
-}
 
-.square:nth-child(1) {
-	grid-area: square_1;
-}
+	&:nth-child(1) {
+		grid-area: square_1;
+	}
 
-.square:nth-child(2) {
-	grid-area: square_2;
-}
+	&:nth-child(2) {
+		grid-area: square_2;
+	}
 
-.square:nth-child(3) {
-	grid-area: square_3;
-}
+&:nth-child(3) {
+		grid-area: square_3;
+	}
 
-.square:nth-child(4) {
-	grid-area: square_4;
+	&:nth-child(4) {
+		grid-area: square_4;
+	}
 }
 
 /* ||SIDEBAR */
@@ -75,15 +75,29 @@ body {
 	cursor: pointer;
 }
 
-.menu:not(:last-child) {
-	margin-bottom: var(--space-sm);
-}
-
 .menu {
 	position: relative;
 	padding: 0.25rem 0 0.25rem calc(var(--space-xl) * 1.5);
 	user-select: none;
 	cursor: pointer;
+
+	&:not(:last-child) {
+		margin-bottom: var(--space-sm);
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		display: block;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 95%;
+		height: clamp(1.25rem, calc(0.909rem + 1.705vw), 1.563rem);
+		width: clamp(1.25rem, calc(0.909rem + 1.705vw), 1.563rem);
+		transform: translateY(-50%);
+	}
 }
 
 .menu__link {
@@ -95,56 +109,44 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
-.menu::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 50%;
-	display: block;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 95%;
-	height: clamp(1.25rem, calc(0.909rem + 1.705vw), 1.563rem);
-	width: clamp(1.25rem, calc(0.909rem + 1.705vw), 1.563rem);
-	transform: translateY(-50%);
-}
-
 .navigation {
 	margin-bottom: calc(var(--space-xl) * 2);
+
+	& .menu:nth-child(1)::before {
+		background-image: url("../img/home.svg");
+	}
+
+	& .menu:nth-child(2)::before {
+		background-image: url("../img/profile.svg");
+	}
+
+	& .menu:nth-child(3)::before {
+		background-image: url("../img/messages.svg");
+	}
+
+	& .menu:nth-child(4)::before {
+		background-image: url("../img/history.svg");
+	}
+
+	& .menu:nth-child(5)::before {
+		background-image: url("../img/tasks.svg");
+	}
+
+	& .menu:nth-child(6)::before {
+		background-image: url("../img/communities.svg");
+	}
 }
 
-.navigation > .menu:nth-child(1)::before {
-	background-image: url("../img/home.svg");
-}
+.permission {
+	& .menu:nth-child(1)::before {
+		background-image: url("../img/settings.svg");
+	}
 
-.navigation > .menu:nth-child(2)::before {
-	background-image: url("../img/profile.svg");
-}
+	& .menu:nth-child(2)::before {
+		background-image: url("../img/support.svg");
+	}
 
-.navigation > .menu:nth-child(3)::before {
-	background-image: url("../img/messages.svg");
-}
-
-.navigation > .menu:nth-child(4)::before {
-	background-image: url("../img/history.svg");
-}
-
-.navigation > .menu:nth-child(5)::before {
-	background-image: url("../img/tasks.svg");
-}
-
-.navigation > .menu:nth-child(6)::before {
-	background-image: url("../img/communities.svg");
-}
-
-.permission > .menu:nth-child(1)::before {
-	background-image: url("../img/settings.svg");
-}
-
-.permission > .menu:nth-child(2)::before {
-	background-image: url("../img/support.svg");
-}
-
-.permission > .menu:nth-child(3)::before {
-	background-image: url("../img/privacy.svg");
+	& .menu:nth-child(3)::before {
+		background-image: url("../img/privacy.svg");
+	}
 }
