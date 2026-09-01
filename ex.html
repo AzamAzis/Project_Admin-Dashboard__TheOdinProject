@@ -5,36 +5,44 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
-		.box {
-			background-image: linear-gradient(royalblue, blue);
-			height: 100px;
-			width: 100px;
-			transition: all 1s ease-in;
-		}
-
-		.ball {
-			background-color: black;
+		.sidebar {
+			position: absolute;
+			width: 500px;
+			background-color: royalblue;
+			margin-top: 2rem;
 			padding: 1rem;
-			width: 100px;
-		}
-
-		.ball:hover + .box {
-			width: 100px;
-		}
-
-		p {
-			visibility: hidden;
-			transition: all 3s ease-in;
-		}
-
-		.box:hover + p {
-			visibility: visible;
+			transform: translateY(-200%);
+			transition: transform 1s ease-in;
 		}
 	</style>
 </head>
 <body>
-	<div class="ball"></div>
-	<div class="box"></div>
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, officia?</p>
+	<button type="button">Click me</button>
+	<aside class="sidebar">
+		<nav class="nav-container">
+			<ul class="navigation">
+				<li class="menu"><a class="menu__link" href="/">Home</a></li>
+				<li class="menu"><a class="menu__link" href="/">Profile</a></li>
+				<li class="menu"><a class="menu__link" href="/">Messages</a></li>
+				<li class="menu"><a class="menu__link" href="/">History</a></li>
+				<li class="menu"><a class="menu__link" href="/">Tasks</a></li>
+				<li class="menu"><a class="menu__link" href="/">Communities</a></li>
+			</ul>
+			<ul class="permission">
+				<li class="menu"><a class="menu__link" href="/">Settings</a></li>
+				<li class="menu"><a class="menu__link" href="/">Support</a></li>
+				<li class="menu"><a class="menu__link" href="/">Privacy</a></li>
+			</ul>
+		</nav>
+	</aside>
+
+	<script>
+		const btn = document.querySelector('button');
+		const para = document.querySelector(".sidebar");
+
+		btn.addEventListener("click", (event) => {
+			para.style.transform = "translateY(0)";
+		});
+	</script>
 </body>
 </html>

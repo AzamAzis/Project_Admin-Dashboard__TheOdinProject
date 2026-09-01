@@ -45,15 +45,28 @@ body {
 
 /* ||SIDEBAR */
 .sidebar-opener {
+	position: relative;
+	z-index: 9;
 	background-color: var(--clr-primary);
 	height: 8vh;
-	margin-bottom: var(--space-xl);
 	padding: var(--space-md);
 }
+
 .sidebar {
-	height: 100%;
-	padding: var(--space-lg);
+	position: absolute;
+	background-color: var(--clr-primary);
+	height: 100dvh;
+	padding: calc(var(--space-xl) * 1.15) var(--space-lg) 0;
 	width: 100%;
+	transform: translateY(-100%);
+	visibility: hidden;
+	will-change: transform, visibility;
+	transition: all 0.5s ease-in;
+
+	&.__open {
+		transform: translateY(0);
+		visibility: visible;
+	}
 }
 
 .dashboard__title,
@@ -66,7 +79,6 @@ body {
 	display: flex;
 	align-items: center;
 	gap: var(--space-md);
-	/* margin-bottom: calc(var(--space-xl) * 2); */
 }
 
 .dashboard__title {
@@ -110,7 +122,7 @@ body {
 }
 
 .navigation {
-	margin-bottom: calc(var(--space-xl) * 2);
+	margin-bottom: calc(var(--space-xl) * 1.15);
 
 	& .menu:nth-child(1)::before {
 		background-image: url("../img/home.svg");
