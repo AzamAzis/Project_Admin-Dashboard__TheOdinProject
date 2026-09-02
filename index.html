@@ -40,7 +40,7 @@
 			<div class="square" aria-hidden="true"></div>
 			<div class="square" aria-hidden="true"></div>
 		</div>
-			<h2 class="dashboard__title">Dashboard</h2>
+			<h2 class="__title">Dashboard</h2>
 		</button>
 	</div>
 	<aside class="sidebar">
@@ -61,38 +61,50 @@
 		</nav>
 	</aside>
 	<header class="header-container">
-		<search class="search-wrapper">
-			<form class="search-container" action="#" method="get">
-				<button type="submit">
-					<img src="assets/img/search.svg" alt="Search button" />
+		<search class="search">
+			<form class="__container" action="#" method="get">
+				<button class="btn __btn" type="submit">
+					<img class="__icon" src="assets/img/search.svg" alt="Search button" />
 				</button>
-				<input class="searchbox" type="search" inputmode="search" />
+				<input class="__box" type="search" inputmode="search" spellcheck="false" />
+				<button class="btn __delete" type="button">
+					<img
+						class="__icon"
+						src="assets/img/close.svg"
+						alt="Delete search keywords button"
+					>
+				</button>
 			</form>
 		</search>
-		<img
-			class="notification"
-			src="assets/img/notification.svg"
-			alt="notification"
-		/>
-		<img
-			class="profile-picture"
-			src="assets/img/profile-picture.jpg"
-			alt="Profile"
-		/>
-		<p class="name">
-			<a
-				href="https://github.com/AzamAzis"
-				rel="noopener noreferrer"
-				target="_blank"
-			>
-				Azam Azis
-			</a>
-		</p>
-		<div class="container">
-			<img src="assets/img/profile-picture.jpg" alt="Profile" />
-			<div class="greeting">
-				<p class="greeting__para">Hi there,</p>
-				<h1 class="greeting__name name">Azam Azis (@AzamAzis)</h1>
+		<button class="btn notification" type="button">
+			<img
+				class="__icon"
+				src="assets/img/notification.svg"
+				alt="notification"
+			/>
+		</button>
+		<div class="profile">
+			<img
+				class="__picture"
+				src="assets/img/profile-picture.jpg"
+				alt="Profile"
+			/>
+			<p class="__name">
+				<a
+					class="__link"
+					href="https://github.com/AzamAzis"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					Azam Azis
+				</a>
+			</p>
+		</div>
+		<div class="user">
+			<img class="__picture" src="assets/img/profile-picture.jpg" alt="Profile" />
+			<div class="__greeting">
+				<p class="__para">Hi there,</p>
+				<h1 class="name __name">Azam Azis <span class="__username">(@AzamAzis)</span></h1>
 			</div>
 			<button class="btn" type="button">New</button>
 			<button class="btn" type="button">Upload</button>
