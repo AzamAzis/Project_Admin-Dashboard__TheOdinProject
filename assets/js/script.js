@@ -22,3 +22,20 @@ dashboardBtn.addEventListener("click", () => {
 document.documentElement.addEventListener("scroll", (event) => {
 	document.documentElement.classList.add("scroll");
 });
+
+// ||SEARCH
+const searchBox = document.querySelector(".search .__box");
+const deleteSearch = document.querySelector(".search .__delete");
+
+searchBox.addEventListener("input" , (event) => {
+	if (event.currentTarget.value) {
+		deleteSearch.classList.add("__visible");
+	} else {
+		deleteSearch.classList.remove("__visible");
+	}
+});
+
+deleteSearch.addEventListener("click", (event) => {
+	searchBox.value = "";
+	event.currentTarget.classList.remove("__visible");
+});
