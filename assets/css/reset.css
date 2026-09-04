@@ -38,7 +38,8 @@ a {
 	text-decoration: none;
 }
 
-img {
+img,
+svg {
 	display: block;
 	height: auto;
 	max-width: 100%;

@@ -39,3 +39,9 @@ deleteSearch.addEventListener("click", (event) => {
 	searchBox.value = "";
 	event.currentTarget.classList.remove("__visible");
 });
+
+// ||ADD TO FAVORITE
+const favoriteBtns = document.querySelectorAll(".favorite");
+const starPluses = document.querySelectorAll(".lucide-star-plus");
+
+let checked = false;
