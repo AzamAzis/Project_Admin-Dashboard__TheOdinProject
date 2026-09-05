@@ -42,6 +42,58 @@ deleteSearch.addEventListener("click", (event) => {
 
 // ||ADD TO FAVORITE
 const favoriteBtns = document.querySelectorAll(".favorite");
-const starPluses = document.querySelectorAll(".lucide-star-plus");
+const starPluses = document.querySelectorAll(".star-plus");
 
-let checked = false;
+let favChecked = false;
+
+
+favoriteBtns.forEach((btn, p) => {
+	btn.addEventListener("click", (event) => {
+		starPluses.forEach((star, c) => {
+			if (!favChecked && (p === c)) {
+				star.src = "assets/img/star-check.svg";
+				star.alt = "Added to favorite";
+				favChecked = true;
+			} else if (favChecked && (p === c)) {
+				star.src = "assets/img/star-plus.svg";
+				star.alt = "Add to favorite";
+				favChecked= false;
+			}
+		});
+	});
+});
+
+// ||WATCH LIST
+const watchListBtns = document.querySelectorAll(".watch-list");
+const eyePluses = document.querySelectorAll(".eye-plus");
+
+let watchChecked = false;
+
+watchListBtns.forEach((btn, p) => {
+	btn.addEventListener("click", (event) => {
+		eyePluses.forEach((eye, c) => {
+			if (!watchChecked && (p === c)) {
+				eye.src = "assets/img/eye-check.svg";
+				eye.alt = "Watch Listed.";
+				watchChecked = true;
+			} else if (watchChecked && (p === c)) {
+				eye.src = "assets/img/eye-plus.svg";
+				eye.alt = "Watch list.";
+				watchChecked = false;
+			}
+		});
+	});
+});
+
+// ||PROJECTS
+
+const projectsContainer = document.querySelector(".projects");
+const projectCards = projectsContainer.querySelectorAll(".__card");
+const showProjectsBtn = document.querySelector(".show-project");
+
+const projects = Array.from(projectCards);
+
+let currentProjects = 0;
+let projectPerPage = 2;
+
+console.log((projectCards));

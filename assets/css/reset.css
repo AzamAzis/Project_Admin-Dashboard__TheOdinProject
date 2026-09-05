@@ -21,12 +21,11 @@ h3,
 p {
 	hyphens: auto;
 	overflow-wrap: break-word;
-	text-wrap-style: pretty;
+	text-wrap: wrap pretty;
 }
 
 p {
 	max-width: 80ch;
-	text-overflow: ellipsis;
 }
 
 ul {
