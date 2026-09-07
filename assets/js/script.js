@@ -91,9 +91,56 @@ const projectsContainer = document.querySelector(".projects");
 const projectCards = projectsContainer.querySelectorAll(".__card");
 const showProjectsBtn = document.querySelector(".show-project");
 
+const projectContainerCurrentHeight = Number.parseInt(getComputedStyle(projectsContainer).height, 10);
+const projectContainerPosition = projectsContainer.getBoundingClientRect();
 const projects = Array.from(projectCards);
 
-let currentProjects = 0;
-let projectPerPage = 2;
+projects.forEach((item) => {
+	item.classList.add("__hidden");
+});
 
-console.log((projectCards));
+const displayProject = 2;
+let initialIndexProject = 0;
+
+function showProject() {
+	const next = projects.slice(0, initialIndexProject + displayProject);
+
+	next.forEach((item) => {
+		item.classList.remove("__hidden");
+	});
+
+	projectsContainer.style.height =
+		`${projectContainerCurrentHeight / (projects.length / next.length)}px`
+	;
+	showProjectsBtn.textContent = "Show More";
+
+	if (next.length === projects.length) {
+		showProjectsBtn.textContent = "Show Less";
+		initialIndexProject = -displayProject;
+	}
+
+	initialIndexProject += displayProject;
+
+	if (initialIndexProject === displayProject) {
+		projectsContainer.scrollIntoView({
+			block: "start",
+			inline: "start",
+			behavior: "smooth",
+		});
+
+		setTimeout(() => {
+			const prev = projects.slice(initialIndexProject);
+			prev.forEach((item) => {
+				item.classList.add("__hidden");
+			});
+		}, 1000);
+	}
+
+	console.log(initialIndexProject)
+}
+
+showProject();
+
+showProjectsBtn.addEventListener("click", () => {
+	showProject();
+});
