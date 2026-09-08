@@ -22,6 +22,7 @@ p {
 	hyphens: auto;
 	overflow-wrap: break-word;
 	text-wrap: wrap pretty;
+	word-break: break-word;
 }
 
 p {

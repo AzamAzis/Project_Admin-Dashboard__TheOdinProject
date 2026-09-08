@@ -91,8 +91,7 @@ const projectsContainer = document.querySelector(".projects");
 const projectCards = projectsContainer.querySelectorAll(".__card");
 const showProjectsBtn = document.querySelector(".show-project");
 
-const projectContainerCurrentHeight = Number.parseInt(getComputedStyle(projectsContainer).height, 10);
-const projectContainerPosition = projectsContainer.getBoundingClientRect();
+const projectContainerCurrentHeight = Number.parseInt(projectsContainer.getBoundingClientRect().height, 10);
 const projects = Array.from(projectCards);
 
 projects.forEach((item) => {
@@ -112,7 +111,6 @@ function showProject() {
 	projectsContainer.style.height =
 		`${projectContainerCurrentHeight / (projects.length / next.length)}px`
 	;
-	showProjectsBtn.textContent = "Show More";
 
 	if (next.length === projects.length) {
 		showProjectsBtn.textContent = "Show Less";
@@ -122,6 +120,7 @@ function showProject() {
 	initialIndexProject += displayProject;
 
 	if (initialIndexProject === displayProject) {
+		showProjectsBtn.textContent = "Show More";
 		projectsContainer.scrollIntoView({
 			block: "start",
 			inline: "start",
