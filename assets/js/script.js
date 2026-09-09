@@ -101,6 +101,8 @@ projects.forEach((item) => {
 const displayProject = 2;
 let initialIndexProject = 0;
 
+let prevIndexProject;
+
 function showProject() {
 	const next = projects.slice(0, initialIndexProject + displayProject);
 
@@ -112,14 +114,7 @@ function showProject() {
 		`${projectContainerCurrentHeight / (projects.length / next.length)}px`
 	;
 
-	if (next.length === projects.length) {
-		showProjectsBtn.textContent = "Show Less";
-		initialIndexProject = -displayProject;
-	}
-
-	initialIndexProject += displayProject;
-
-	if (initialIndexProject === displayProject) {
+	if (prevIndexProject === initialIndexProject) {
 		showProjectsBtn.textContent = "Show More";
 		projectsContainer.scrollIntoView({
 			block: "start",
@@ -133,9 +128,17 @@ function showProject() {
 				item.classList.add("__hidden");
 			});
 		}, 1000);
+
+		prevIndexProject = undefined;
 	}
 
-	console.log(initialIndexProject)
+	if (next.length === projects.length) {
+		showProjectsBtn.textContent = "Show Less";
+		initialIndexProject = -displayProject;
+		prevIndexProject = 0;
+	}
+
+	initialIndexProject += displayProject;
 }
 
 showProject();

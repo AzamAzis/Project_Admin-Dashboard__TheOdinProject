@@ -5,45 +5,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
-		:root {
-			--r: 1rem;
+		a {
+			text-decoration: none;
+			color: black;
 		}
-		.container {
-			display: grid;
-			gap: 1rem;
-			border: 1px solid black;
-			height: calc(100px + var(--r));
-			overflow: hidden;
-			transition: height 0.3s ease-in;
-		}
-
-		.box {
-			width: 50px;
-			height: 50px;
-			background-color: blue;
-			color: white;
-			text-align: center;
-			line-height: 50px;
-			font-weight: bold;
-			font-size: 1.5rem;
-		}
-
-		button {
-			margin-top: 1rem;
+		a:visited {
+			color: gray;
+			text-decoration-line: underline;
+			text-decoration-thickness: 20px;
+			text-decoration-style: solid;
+			text-decoration-color: red;
 		}
 	</style>
 </head>
 <body>
-	<div class="container">
-		<div class="box">1</div>
-		<div class="box">2</div>
-		<div class="box">3</div>
-		<div class="box">4</div>
-		<div class="box">5</div>
-		<div class="box">6</div>
-	</div>
-
-	<button type="button">Button</button>
+	<a href="https://en.wikipedia.org/wiki/Cat" target="__blank" rel="noreferrer noopener">https://en.wikipedia.org/wiki/Cat</a>
 	<script>
 		const container = document.querySelector(".container");
 		const btn = document.querySelector("button");
