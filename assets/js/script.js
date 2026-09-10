@@ -19,10 +19,6 @@ dashboardBtn.addEventListener("click", () => {
 	}
 });
 
-document.documentElement.addEventListener("scroll", (event) => {
-	document.documentElement.classList.add("scroll");
-});
-
 // ||SEARCH
 const searchBox = document.querySelector(".search .__box");
 const deleteSearch = document.querySelector(".search .__delete");

@@ -83,20 +83,23 @@ body {
 }
 
 .sidebar {
-	position: absolute;
+	position: fixed;
+	inset: auto;
 	z-index: 9;
 	background-color: var(--clr-primary);
-	height: 100dvh;
-	padding-block: calc(var(--space-xl) * 1.15) 0;
+	height: calc(100% - (var(--space-xl) * 2));
+	overflow: auto;
+	padding-block: calc(var(--space-xl) * 1.15) var(--space-md);
 	padding-inline: var(--space-lg);
 	width: 100%;
-	transform: translateY(-100%);
+	transform: translateX(-100%);
 	visibility: hidden;
 	will-change: transform, visibility;
 	transition: all 0.5s ease-in;
+	scrollbar-width: none;
 
 	&.__open {
-		transform: translateY(0);
+		transform: translateX(0%);
 		visibility: visible;
 	}
 }
@@ -255,6 +258,10 @@ body {
 		font: var(--fs-base) / 0.5rem "Roboto", sans-serif;
 	}
 
+	& .__box::-webkit-search-results-button {
+		display: none;
+	}
+
 	& .__box::-webkit-search-cancel-button {
 		display: none;
 	}
@@ -396,12 +403,6 @@ body {
 		height: min-content;
 		overflow: hidden;
 		color: var(--clr-text-muted);
-	}
-
-	@supports (not (line-clamp: vertical)) or (not (-webkit-line-clamp: vertical)) {
-		& .__introduction {
-			height: 7.5rem;
-		}
 	}
 
 	& .__icon {
@@ -550,5 +551,20 @@ body {
 	}
 }
 
+/* ||SUPPORTS */
+@supports not (scrollbar-width: none) {
+	.sidebar::-webkit-scrollbar {
+		width: 0;
+	}
+}
+
+	@supports (not (line-clamp: vertical)) or (not (-webkit-line-clamp: vertical)) {
+		.projects .__introduction {
+			height: 7.5rem;
+		}
+	}
+
 /* ||MEDIA QUERIES */
-@media (min-width: 400px) {}
+@media (min-width: 37.5rem) { /* 600px */
+
+}
