@@ -87,58 +87,73 @@ const projectsContainer = document.querySelector(".projects");
 const projectCards = projectsContainer.querySelectorAll(".__card");
 const showProjectsBtn = document.querySelector(".show-project");
 
+const smallDevice = window.matchMedia("(width < 600px)");
 const projectContainerCurrentHeight = Number.parseInt(projectsContainer.getBoundingClientRect().height, 10);
 const projects = Array.from(projectCards);
 
-projects.forEach((item) => {
-	item.classList.add("__hidden");
-});
-
-const displayProject = 2;
-let initialIndexProject = 0;
-
-let prevIndexProject;
-
-function showProject() {
-	const next = projects.slice(0, initialIndexProject + displayProject);
-
-	next.forEach((item) => {
-		item.classList.remove("__hidden");
-	});
-
-	projectsContainer.style.height =
-		`${projectContainerCurrentHeight / (projects.length / next.length)}px`
-	;
-
-	if (prevIndexProject === initialIndexProject) {
-		showProjectsBtn.textContent = "Show More";
-		projectsContainer.scrollIntoView({
-			block: "start",
-			inline: "start",
-			behavior: "smooth",
+function smallToMed() {
+	if (smallDevice.matches) {
+		projects.forEach((item) => {
+			item.classList.add("__hidden");
 		});
 
-		setTimeout(() => {
-			const prev = projects.slice(initialIndexProject);
-			prev.forEach((item) => {
-				item.classList.add("__hidden");
+		const displayProject = 2;
+		let initialIndexProject = 0;
+
+		let prevIndexProject;
+
+		function showProject() {
+			const next = projects.slice(0, initialIndexProject + displayProject);
+
+			next.forEach((item) => {
+				item.classList.remove("__hidden");
 			});
-		}, 1000);
 
-		prevIndexProject = undefined;
+			projectsContainer.style.height =
+				`${projectContainerCurrentHeight / (projects.length / next.length)}px`
+			;
+
+			if (prevIndexProject === initialIndexProject) {
+				showProjectsBtn.textContent = "Show More";
+				projectsContainer.scrollIntoView({
+					block: "start",
+					inline: "start",
+					behavior: "smooth",
+				});
+
+				setTimeout(() => {
+					const prev = projects.slice(initialIndexProject);
+					prev.forEach((item) => {
+						item.classList.add("__hidden");
+					});
+				}, 1000);
+
+				prevIndexProject = undefined;
+			}
+
+			if (next.length === projects.length) {
+				showProjectsBtn.textContent = "Show Less";
+				initialIndexProject = -displayProject;
+				prevIndexProject = 0;
+			}
+
+			initialIndexProject += displayProject;
+		}
+
+		showProject();
+
+		showProjectsBtn.addEventListener("click", () => {
+			showProject();
+		});
+	} else {
+		projects.forEach((item) => {
+			item.classList.remove("__hidden");
+		});
+
+		projectsContainer.style.removeProperty("height");
 	}
-
-	if (next.length === projects.length) {
-		showProjectsBtn.textContent = "Show Less";
-		initialIndexProject = -displayProject;
-		prevIndexProject = 0;
-	}
-
-	initialIndexProject += displayProject;
 }
 
-showProject();
+smallToMed();
 
-showProjectsBtn.addEventListener("click", () => {
-	showProject();
-});
+smallDevice.addEventListener("change", smallToMed);
