@@ -748,6 +748,7 @@ body {
 	}
 
 	.projects {
+		grid-auto-rows: auto;
 		grid-area: project;
 	}
 
