@@ -719,7 +719,7 @@ body {
 	.main-container {
 		display: grid;
 		gap: 1rem;
-		grid-template-columns: 1fr 1fr min(22rem, 35%);
+		grid-template-columns: repeat(2, 1fr) min(22rem, 35%);
 		grid-template-rows: max-content 1fr max-content 1fr;
 		grid-template-areas:
 			"t-project t-project t-announcement"

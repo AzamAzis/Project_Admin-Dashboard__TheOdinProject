@@ -40,22 +40,27 @@ deleteSearch.addEventListener("click", (event) => {
 const favoriteBtns = document.querySelectorAll(".favorite");
 const starPluses = document.querySelectorAll(".star-plus");
 
-let favChecked = false;
-
+const stars = Array.from(starPluses);
+const savedFav = localStorage.getItem("favorite");
 
 favoriteBtns.forEach((btn, p) => {
-	btn.addEventListener("click", (event) => {
+	let isChecked = JSON.parse(btn.ariaChecked);
+
+	btn.addEventListener("click", () => {
 		starPluses.forEach((star, c) => {
-			if (!favChecked && (p === c)) {
+			if (!isChecked && (p === c)) {
 				star.src = "assets/img/star-check.svg";
 				star.alt = "Added to favorite";
-				favChecked = true;
-			} else if (favChecked && (p === c)) {
+				localStorage.setItem("favorite", c);
+			} else if (isChecked && (p === c)) {
 				star.src = "assets/img/star-plus.svg";
 				star.alt = "Add to favorite";
-				favChecked= false;
+				localStorage.removeItem("favorite");
 			}
 		});
+
+		btn.ariaChecked = !isChecked;
+		isChecked = !isChecked;
 	});
 });
 
