@@ -40,8 +40,8 @@ deleteSearch.addEventListener("click", (event) => {
 const favoriteBtns = document.querySelectorAll(".favorite");
 const starPluses = document.querySelectorAll(".star-plus");
 
-const stars = Array.from(starPluses);
-const savedFav = localStorage.getItem("favorite");
+const savedFav = JSON.parse(localStorage.getItem("favorite")) || [];
+
 
 favoriteBtns.forEach((btn, p) => {
 	let isChecked = JSON.parse(btn.ariaChecked);
@@ -51,16 +51,26 @@ favoriteBtns.forEach((btn, p) => {
 			if (!isChecked && (p === c)) {
 				star.src = "assets/img/star-check.svg";
 				star.alt = "Added to favorite";
-				localStorage.setItem("favorite", c);
+				savedFav.push(c);
 			} else if (isChecked && (p === c)) {
 				star.src = "assets/img/star-plus.svg";
 				star.alt = "Add to favorite";
-				localStorage.removeItem("favorite");
+				savedFav.splice(savedFav.indexOf(c), 1);
 			}
 		});
 
+		localStorage.setItem("favorite", JSON.stringify(savedFav));
+		console.log(savedFav);
+
 		btn.ariaChecked = !isChecked;
 		isChecked = !isChecked;
+	});
+
+	savedFav.forEach((saved) => {
+		if (saved === p) {
+			starPluses[p].src = "assets/img/star-check.svg";
+			isChecked = true;
+		}
 	});
 });
 
@@ -68,21 +78,36 @@ favoriteBtns.forEach((btn, p) => {
 const watchListBtns = document.querySelectorAll(".watch-list");
 const eyePluses = document.querySelectorAll(".eye-plus");
 
-let watchChecked = false;
+const savedWatch = JSON.parse(localStorage.getItem("watch-list")) || [];
 
 watchListBtns.forEach((btn, p) => {
-	btn.addEventListener("click", (event) => {
+	let isChecked = JSON.parse(btn.ariaChecked);
+
+	btn.addEventListener("click", () => {
 		eyePluses.forEach((eye, c) => {
-			if (!watchChecked && (p === c)) {
+			if (!isChecked && (p === c)) {
 				eye.src = "assets/img/eye-check.svg";
 				eye.alt = "Watch Listed.";
-				watchChecked = true;
-			} else if (watchChecked && (p === c)) {
+				savedWatch.push(c);
+			} else if (isChecked && (p === c)) {
 				eye.src = "assets/img/eye-plus.svg";
 				eye.alt = "Watch list.";
-				watchChecked = false;
+				savedWatch.splice(savedWatch.indexOf(c), 1);
 			}
 		});
+
+		localStorage.setItem("watch-list", JSON.stringify(savedWatch));
+
+		btn.ariaChecked = !isChecked;
+		isChecked = !isChecked;
+	});
+
+	savedWatch.forEach((saved) => {
+		if (saved === p) {
+			eyePluses[p].src = "assets/img/eye-check.svg";
+			eyePluses[p].alt = "Watch Listed";
+			isChecked = true;
+		}
 	});
 });
 
